@@ -1,9 +1,11 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
+var counting = false;
 
 client.on('message', message => {
-  if (message.content === "!count") {
+  if (message.content === "!count" && !counting) {
+    counting = true;
     count(message, 5);
   }
 });
@@ -13,6 +15,8 @@ function count(message, number) {
     message.reply(number);
     number--;
     setTimeout(function() { count(message, number) }, 1000);
+  } else {
+    counting = false;
   }
 }
 
