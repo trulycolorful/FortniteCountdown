@@ -3,15 +3,15 @@ const client = new Discord.Client();
 
 client.on('message', message => {
   if (message.content === "!count") {
-    count(5);
+    count(message, 5);
   }
 });
 
-function count(number) {
+function count(message, number) {
   if(number > 0) {
     message.reply(number);
     number--;
-    setTimeout(count(number), 1000);
+    setTimeout(count(message, number), 1000);
   }
 }
 
