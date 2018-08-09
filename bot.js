@@ -6,18 +6,16 @@ var counting = false;
 client.on('message', message => {
   if (message.content === "!count" && !counting) {
     counting = true;
+    var channel = client.channels.find('name', 'Countdown');
+    channel.join()
+      .then(connection => {
+        const dispatcher = connection.playFile('./countdown.wav');
+        dispatcher.on('end', end => { channel.leave(); });
+      })
+      .catch(err => console.log(err));
+    
     count(message, 10);
   }
 });
-
-function count(message, number) {
-  if(number > 0) {
-    message.reply(number);
-    number--;
-    setTimeout(function() { count(message, number) }, 1000);
-  } else {
-    counting = false;
-  }
-}
 
 client.login(process.env.BOT_TOKEN);
