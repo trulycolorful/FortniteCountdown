@@ -6,7 +6,7 @@ var counting = false;
 client.on('message', message => {
   if (message.content === "!count" && !counting) {
     counting = true;
-    count(message, 15);
+    count(message, 10);
   }
 });
 
