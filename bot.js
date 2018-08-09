@@ -16,8 +16,6 @@ client.on('message', message => {
         });
       })
       .catch(err => console.log(err));
-    
-    count(message, 10);
   }
 });
 
