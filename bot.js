@@ -10,8 +10,8 @@ client.on('message', message => {
 function count(number) {
   if(number > 0) {
     message.reply(number);
-    i--;
-    setTimeout(count(i, 1000);
+    number--;
+    setTimeout(count(number, 1000);
   }
 }
 
