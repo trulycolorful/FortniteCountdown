@@ -3,17 +3,16 @@ const client = new Discord.Client();
 
 client.on('message', message => {
   if (message.content === "!count") {
-    for(var i = 5; i > 0; i--) {
-      message.reply(i);
-      sleep(10000);
-    }
+    count(5);
   }
 });
 
-function sleep(time) {
-    return new Promise((resolve) => {
-        setTimeout(resolve, time || 10000);
-    });
+function count(number) {
+  if(number > 0) {
+    message.reply(number);
+    i--;
+    setTimeout(count(i, 1000);
+  }
 }
 
 client.login(process.env.BOT_TOKEN);
