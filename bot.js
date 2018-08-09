@@ -11,7 +11,7 @@ function count(number) {
   if(number > 0) {
     message.reply(number);
     number--;
-    setTimeout(count(number, 1000);
+    setTimeout(count(number), 1000);
   }
 }
 
