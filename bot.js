@@ -10,7 +10,10 @@ client.on('message', message => {
     channel.join()
       .then(connection => {
         const dispatcher = connection.playFile('./countdown.wav');
-        dispatcher.on('end', end => { channel.leave(); });
+        dispatcher.on('end', end => { 
+          channel.leave();
+          counting = false;
+        });
       })
       .catch(err => console.log(err));
     
