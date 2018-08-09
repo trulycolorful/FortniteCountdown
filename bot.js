@@ -5,14 +5,14 @@ client.on('message', message => {
   if (message.content === "!count") {
     for(var i = 5; i > 0; i--) {
       message.reply(i);
-      sleep(1000);
+      sleep(2500);
     }
   }
 });
 
 function sleep(time) {
     return new Promise((resolve) => {
-        setTimeout(resolve, time || 1000);
+        setTimeout(resolve, time || 2500);
     });
 }
 
