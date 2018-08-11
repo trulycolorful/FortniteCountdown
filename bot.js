@@ -4,7 +4,7 @@ const client = new Discord.Client();
 var counting = false;
 
 client.on('message', message => {
-  if (message.content === "!count" && !counting) {
+  if (message.content === "!count" && !counting && message.member.roles.find('name', 'Queue Snipes Organizer')) {
     counting = true;
     var channel = client.channels.find('name', 'Countdown');
     channel.join()
