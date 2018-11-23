@@ -17,7 +17,7 @@ client.on('message', message => {
     }
   }
   console.log(role.name);
-  console.log(bear.tag);
+  console.log(bear);
   
   if (message.content === "!mutebear") {
     console.log('muting bear');
