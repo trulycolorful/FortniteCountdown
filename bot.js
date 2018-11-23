@@ -5,8 +5,17 @@ var counting = false;
 
 client.on('message', message => {
   let role = message.guild.roles.find(role => role.name === "Muted");
-  let darrin = message.guild.members.get('502226394789445632');
-  let bear = message.guild.members.get('512462639377678368');
+  let darrin = '';
+  let bear = '';
+  for (var i = 0; i < message.guild.members.length; i++) {
+    if (message.guild.members[i].id === '502226394789445632') {
+      darrin = message.guild.members[i];
+    }
+    
+    if (message.guild.members[i].id === '512462639377678368') {
+      darrin = message.guild.members[i];
+    }
+  }
   console.log(role.name);
   console.log(bear.tag);
   
