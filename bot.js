@@ -13,7 +13,7 @@ client.on('message', message => {
     }
     
     if (message.guild.members[i].id === '512462639377678368') {
-      darrin = message.guild.members[i];
+      bear = message.guild.members[i];
     }
   }
   console.log(role.name);
